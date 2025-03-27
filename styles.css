@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: url('586308_cute-wallpapers-download-ty010-wallpaperjosh_4000x2667_h.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #ffb3d9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    color: #ff4081;
+    font-size: 3em;
+  }
+  
+  p {
+    font-size: 1.5em;
+    color: #7f5b6f;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ff80ab;
+  }
+  
+  .confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+    display: none;
+  }
+  
+  /* Confetti animation */
+  @keyframes confetti-animation {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(500px) rotate(360deg);
+    }
+    100% {
+      transform: translateY(1000px) rotate(720deg);
+    }
+  }
+  
+  .confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    animation: confetti-animation 5s linear infinite;
+  }
+  
