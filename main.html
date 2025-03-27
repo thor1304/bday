@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="message-box">
+      <h1>Happy Birthday, ISHU 💖 !</h1>
+      <p>Wishing you a day filled with love, joy, and all the happiness you deserve!</p>
+      <button onclick="showMessage()">Click for a Surprise 🎉</button>
+    </div>
+  
+    <!-- Section for Surprise Image and Text -->
+    <div id="surprise-section" style="display: none;">
+      <h2>Happy Bday to the Most Prettiest Disney Princess 👑</h2>
+      <img id="surprise-image" src="" alt="Surprise Image" style="max-width: 100%; height: auto; margin-top: 20px;">
+    </div>
+  </div>
+ 
+  <!-- Confetti container -->
+  <div class="confetti" id="confetti"></div>
+  
+  <script>
+    function showMessage() {
+  const messageBox = document.querySelector('.message-box');
+  const surpriseSection = document.getElementById('surprise-section');
+  const surpriseImage = document.getElementById('surprise-image');
+
+  // Update message box content
+  messageBox.innerHTML = `
+    <h1>Surprise!! 🎉</h1>
+    <p>Hope your day is filled with all the happiness in the world!</p>
+    
+  `;
+  
+  // Show the surprise section with image and text
+  surpriseSection.style.display = 'block';
+  
+  // Set the image path here (replace with the actual path)
+  surpriseImage.src = 'wallpaper.jpg'; // Replace with the path to your uploaded image
+}
+;
+  createConfetti();
+
+
+function createConfetti() {
+  const confetti = document.getElementById('confetti');
+  confetti.style.display = 'block';
+  
+  const numberOfConfetti = 100;
+  for (let i = 0; i < numberOfConfetti; i++) {
+    const confettiPiece = document.createElement('div');
+    confettiPiece.classList.add('confetti-piece');
+    confetti.appendChild(confettiPiece);
+    animateConfettiPiece(confettiPiece);
+  }
+}
+
+function animateConfettiPiece(piece) {
+  const xStart = Math.random() * window.innerWidth;
+  const yStart = Math.random() * window.innerHeight;
+  const rotation = Math.random() * 360;
+  const delay = Math.random() * 2 + 's';
+
+  piece.style.left = xStart + 'px';
+  piece.style.top = yStart + 'px';
+  piece.style.transform = `rotate(${rotation}deg)`;
+  piece.style.animation = `confetti-animation 5s ${delay} linear infinite`;
+
+  piece.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+}
+
+  </script>
+</body>
+</html>
